@@ -3,11 +3,29 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    color: aliceblue;
+}
+body {
+    transition: all 1s ease;
+  }
+  
+:root {
+    --body-bg: hsl(230, 17%, 14%);
+    --text-color: hsl(0, 0%, 100%);
+    --card-bg:hsl(232, 19%, 15%);
+    --card-hover:hsl(228, 28%, 20%);
+
+    --instagram: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+.darkMode:root {
+    --body-bg: hsl(0, 0%, 100%);
+    --text-color:hsl(230, 17%, 14%);
+    --card-bg:hsl(228, 29%, 87%);
+    --card-hover:hsl(229, 22%, 90%);
 }
 
 .main {
-    background: linear-gradient(to bottom,hsl(230, 17%, 14%), hsl(232, 19%, 15%));
+    background: var(--body-bg);
     margin-right: 4rem;
     margin-left: 4rem;
     height: 100vh;
@@ -27,7 +45,9 @@
 }
 
 .dashBoard { 
+    font-weight: 700;
     font-size: 30px;
+    color: var(--text-color);
 }
 
 .count-followers {
@@ -46,8 +66,16 @@
     --toggle-wider: 3em;
 }
 
+.mode-section {
+    display: flex;
+    align-items: center;
+}
+
 .mode {
     margin-right: 10px;
+    color: var(--text-color);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .slider {
     display: inline-block;
@@ -105,10 +133,14 @@
 .grid-card {
     display: flex;
     flex-direction: column;
-    background-color: hsl(228, 28%, 20%);
-    color: white;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     padding: 1rem;
     text-align: center;
+
+    &:hover{
+        background-color: var(--card-hover);
+    }
 }
 
 .grid-second {
@@ -120,10 +152,63 @@
 
 .grid-card-info {
     display: flex;
-    flex-direction: column;
         flex-direction: column;
-        background-color: hsl(228, 28%, 20%);
-        color: white;
-        padding: 1rem;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        padding: 2rem;
         text-align: center;
+        &:hover{
+            background-color: var(--card-hover);
+        }
+}
+
+
+.nick-login {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.nick-login img {
+    margin-right: 5px;
+}
+
+.count-card {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.follow-card {
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+/* sessão 2 dos cards */
+
+
+.info-overwiew {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid-card-numbers {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* margin top das cards */
+
+.grid-card:first-child {
+    border-top: 7px solid #2d86ff;
+}
+.grid-card:nth-child(2) {
+    border-top:7px solid hsl(204.17deg 90.35% 55.29%);
+}
+.grid-card:nth-child(3) {
+    border-top: 7px solid #c471ed;
+}
+.grid-card:nth-child(4) {
+    border-top: 7px solid hsl(0deg 99.21% 50.2%);
 }
